@@ -1,5 +1,9 @@
+import net from "node:net";
+net.setDefaultAutoSelectFamilyAttemptTimeout(5000); // increase default nodejs timeout to complete neon handshake
+
 import { PrismaClient } from "../app/generated/prisma/client";
 import { PrismaPg } from "@prisma/adapter-pg";
+
 import "dotenv/config";
 
 const globalForPrisma = globalThis as unknown as {
